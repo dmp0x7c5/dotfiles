@@ -44,7 +44,7 @@ task :install do
   #puts "Moving zshenv to zshrc"
   #system %Q{sudo mv /etc/zshenv /etc/zshrc}
 
-  if File.exists?(File.join(ENV['HOME'], ".tmp"))
+  unless File.exists?(File.join(ENV['HOME'], ".tmp"))
     system %Q{mkdir ~/.tmp}
   end
 
