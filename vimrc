@@ -2,6 +2,41 @@
 " 	dmp0x7c5@gmail.com
 "
 
+" ========================================================================
+" Vundle - Vim plugin manager - Required to be on the top of vimrc
+" ========================================================================
+" Note that Vundle installation is gitignored. Setup:
+" git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+" :PluginInstall
+"
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" Selected plugins
+Plugin 'ervandew/supertab'
+Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-rails'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'wincent/Command-T'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+
+" ========================================================================
+" Legacy Vimrc
+" ========================================================================
+
 syntax on
 filetype on
 

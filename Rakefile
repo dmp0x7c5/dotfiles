@@ -44,7 +44,10 @@ task :install do
   #puts "Moving zshenv to zshrc"
   #system %Q{sudo mv /etc/zshenv /etc/zshrc}
 
-  system %Q{mkdir ~/.tmp}
+  if File.exists?(File.join(ENV['HOME'], ".tmp"))
+    system %Q{mkdir ~/.tmp}
+  end
+
 end
 
 def backup_name(file)
