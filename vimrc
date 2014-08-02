@@ -40,6 +40,7 @@ filetype plugin indent on    " required
 syntax on
 filetype on
 
+set number
 set autoindent
 set cindent
 
@@ -331,12 +332,17 @@ augroup myfiletypes
   "autocmd FileType clojure map <Leader>t :!lein test %<cr>
 augroup END
 
+" Remove trailing whitespace on save for ruby files.
+au BufWritePre *.rb :%s/\s\+$//e
+
 
 " ========================================================================
-" Map
+" Keys
 " ========================================================================
-map <C-s> <esc>:w<CR>
+map <C-s> :w<CR>
 imap <C-s> <esc>:w<CR>
+
+let mapleader = ","
 
 
 
