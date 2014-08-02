@@ -34,6 +34,9 @@ alias mkdir='nocorrect mkdir'
 alias chromium-tor='chromium-browser --proxy-server="socks5://localhost:9050"'
 alias netbeans-7.2-aa='netbeans-7.2 -J-Dswing.aatext=true -J-Dawt.useSystemAAFontSettings=lcd'
 
+# develiases
+alias g="git"
+
 alias hdmi_off="xrandr --output HDMI-0 --off"
 alias hdmi_on="xrandr --output HDMI-0 --mode 1920x1080 --pos 0x0 --output LVDS-0 --mode 1366x768 --pos 1920x312"
 

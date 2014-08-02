@@ -341,6 +341,8 @@ au BufWritePre *.rb :%s/\s\+$//e
 " ========================================================================
 map <C-s> :w<CR>
 imap <C-s> <esc>:w<CR>
+map <C-h> :tabprevious<CR>
+map <C-l> :tabnext<CR>
 
 let mapleader = ","
 
