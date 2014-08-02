@@ -22,11 +22,22 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Selected plugins
-Plugin 'ervandew/supertab'
+"Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-rails'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'wincent/Command-T'
+
+" Snipmate:
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+" Optional:
+Plugin 'honza/vim-snippets'
+
+Plugin 'scrooloose/nerdtree'
+" NERDTree usage :NERDTreeToggle
+"
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
