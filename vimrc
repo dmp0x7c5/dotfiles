@@ -28,6 +28,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-endwise'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'wincent/Command-T'
 
