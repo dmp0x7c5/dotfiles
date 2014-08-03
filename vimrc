@@ -1,4 +1,6 @@
-" dmp's .vimrc
+" ========================================================================
+" dmp's vimrc
+" ========================================================================
 " 	dmp0x7c5@gmail.com
 "
 
@@ -25,15 +27,16 @@ Plugin 'gmarik/Vundle.vim'
 "Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-fugitive'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'wincent/Command-T'
 
 " Snipmate:
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "garbas/vim-snipmate"
 " Optional:
-Plugin 'honza/vim-snippets'
+Bundle "honza/vim-snippets"
 
 Plugin 'scrooloose/nerdtree'
 " NERDTree usage :NERDTreeToggle
@@ -147,18 +150,18 @@ set tags+=tags
 set tags+=./tags
 set tags+=./../tags
 
-function! SuperCleverTab()
-    if strpart(getline('.'), 0, col('.') - 1) =~ '^\s*$'
-        return "\<Tab>"
-    else
-        if &dictionary != ''
-            return "\<C-K>"
-        else
-            return "\<C-Y>"
-        endif
-    endif
-endfunction
-inoremap <Tab> <C-R>=SuperCleverTab()<cr>
+"function! SuperCleverTab()
+"    if strpart(getline('.'), 0, col('.') - 1) =~ '^\s*$'
+"        return "\<Tab>"
+"    else
+"        if &dictionary != ''
+"            return "\<C-K>"
+"        else
+"            return "\<C-Y>"
+"        endif
+"    endif
+"endfunction
+"inoremap <Tab> <C-R>=SuperCleverTab()<cr>
 
 set completeopt=menuone,menu
 
@@ -316,9 +319,6 @@ highlight Pmenu guibg=black guifg=white gui=bold
 highlight PmenuSel guibg=white guifg=black gui=bold
 ""
 
-" ========================================================================
-" dmp's vimrc
-" ========================================================================
 
 
 
