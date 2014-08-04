@@ -32,16 +32,21 @@ Plugin 'tpope/vim-endwise'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'wincent/Command-T'
 
-" Snipmate:
+Plugin 'nelstrom/vim-textobj-rubyblock'
+Plugin 'kana/vim-textobj-user'
+
+Plugin 'bling/vim-airline'	
+
+" Snipmate + deps
+" >>>
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
-" Optional:
 Bundle "honza/vim-snippets"
 
-Plugin 'scrooloose/nerdtree'
 " NERDTree usage :NERDTreeToggle
-"
+" >>>
+Plugin 'scrooloose/nerdtree'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -359,4 +364,9 @@ map <C-l> :tabnext<CR>
 let mapleader = ","
 
 
+" ========================================================================
+" Plugins Customs
+" ========================================================================
+" for vim-airline
+set laststatus=2
 
