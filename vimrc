@@ -30,6 +30,7 @@ Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-endwise'
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'kchmck/vim-coffee-script'
 Plugin 'wincent/Command-T'
 
 Plugin 'nelstrom/vim-textobj-rubyblock'
