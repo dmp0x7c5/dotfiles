@@ -3,7 +3,7 @@
 # [dmp's .zshrc]
 # ========================================================================
 #
-# Oh-my-zsh part could be found following line ~240	
+# Oh-my-zsh part could be found following line ~240
 #
 
 export LC_ALL='en_US.UTF-8'
@@ -35,6 +35,15 @@ alias netbeans-7.2-aa='netbeans-7.2 -J-Dswing.aatext=true -J-Dawt.useSystemAAFon
 
 # develiases
 alias g="git"
+alias postgres_start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
+alias postgres_stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
+alias ctags="`brew --prefix`/bin/ctags"
+
+# disable control-s suspend
+stty stop undef
+stty start unde
+
+
 
 alias hdmi_off="xrandr --output HDMI-0 --off"
 alias hdmi_on="xrandr --output HDMI-0 --mode 1920x1080 --pos 0x0 --output LVDS-0 --mode 1366x768 --pos 1920x312"
@@ -171,7 +180,7 @@ zstyle ':completion:*' complete _complete _list _oldlist _expand _ignored _match
 # allow one error for every three characters typed in approximate completer
 zstyle -e ':completion:*:approximate:*' max-errors \
     'reply=( $(( ($#PREFIX+$#SUFFIX)/3 )) numeric )'
-    
+
 # insert all expansions for expand completer
 zstyle ':completion:*:expand:*' tag-order all-expansions
 
@@ -282,7 +291,7 @@ ZSH_THEME="eastwood"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-plugins=(git rvm osx)
+plugins=(git rvm osx web_search brew screen battery)
 
 source $ZSH/oh-my-zsh.sh
 
