@@ -37,13 +37,12 @@ alias netbeans-7.2-aa='netbeans-7.2 -J-Dswing.aatext=true -J-Dawt.useSystemAAFon
 alias g="git"
 alias postgres_start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 alias postgres_stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
-alias ctags="`brew --prefix`/bin/ctags"
+# for vim-rails purposes system ctags renamed
+#alias ctags="`brew --prefix`/bin/ctags"
 
 # disable control-s suspend
-stty stop undef
-stty start unde
-
-
+#stty stop undef
+#stty start unde
 
 alias hdmi_off="xrandr --output HDMI-0 --off"
 alias hdmi_on="xrandr --output HDMI-0 --mode 1920x1080 --pos 0x0 --output LVDS-0 --mode 1366x768 --pos 1920x312"
@@ -230,8 +229,8 @@ export LS_COLORS
 
 #] PATH changes
 
-# mac bins
-export PATH=/Users/dmp/Applications/:$PATH
+# mac bins and make sure that /usr/local/bin is before /usr/bin
+export PATH=/Users/dmp/Applications/:/usr/local/bin/:$PATH
 # rvm
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
