@@ -72,6 +72,7 @@ set autoindent
 set cindent
 
 set hlsearch
+set vb
 
 set showcmd
 set incsearch
