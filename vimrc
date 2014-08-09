@@ -24,19 +24,25 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Selected plugins
-"Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-surround'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'wincent/Command-T'
+Plugin 'ntpeters/vim-better-whitespace'
+
+Plugin 'flazz/vim-colorschemes'
+Plugin 'bling/vim-airline'
 
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'kana/vim-textobj-user'
 
-Plugin 'bling/vim-airline'	
+" tmp:
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'mileszs/ack.vim'
 
 " Snipmate + deps
 " >>>
@@ -65,10 +71,13 @@ set number
 set autoindent
 set cindent
 
+set hlsearch
+
 set showcmd
-set incsearch  
+set incsearch
 set nocompatible
 set viminfo='20,\"50
+
 set ruler
 set encoding=utf-8
 
@@ -93,16 +102,17 @@ set listchars=tab:[-,trail:\
 "colorscheme brookstream
 "colorscheme night
 "colorscheme zenburn
-colorscheme dusk
+"colorscheme dusk
+colorscheme railscasts
 
 "if &t_Co > 2 || has("gui_running")
 "	colorscheme hemisu
 "endif
-
 "set background=dark
 
 "set guifont=Luxi\ Mono\ Bold\ 10
-set guifont=Inconsolata\ 11
+"set guifont=Inconsolata\ 12
+set guifont=Monaco:h12
 
 ""set guioptions=m
 set guioptions-=T
@@ -130,7 +140,7 @@ inoremap <F2> <C-O>za
 nnoremap <F2> za
 onoremap <F2> <C-C>za
 vnoremap <F2> zf
-"" 
+""
 
 autocmd FileType text setlocal textwidth=78
 
@@ -146,12 +156,12 @@ let g:no_html_tab_mapping = 'yes'
 
 "" ctags:
 " create ctags
-map <c-f12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
+" map <c-f12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
 
 let g:miniBufExplMapWindowNavVim = 0
 let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
-let g:miniBufExplModSelTarget = 1 
+let g:miniBufExplModSelTarget = 1
 
 set tags+=tags
 set tags+=./tags
@@ -202,7 +212,7 @@ let OmniCpp_DefaultNamespaces = ["std", "boost", "_GLIBCXX_STD"]
 
 	map <C-_> :cstag <C-R>=expand("<cword>")<CR><CR>
 
-	
+
 	map g<C-]> :cs find 3 <C-R>=expand("<cword>")<CR><CR>
 	map g<C-\> :cs find 0 <C-R>=expand("<cword>")<CR><CR>
 
@@ -316,10 +326,6 @@ endif
 filetype plugin on
 set grepprg=grep\ -nH\ $*
 
-"re-map rcsvers.vim keys
-map <F8> \rlog
-map <F5> \older
-map <F6> \newer
 
 "" omni no longer pink:
 highlight Pmenu guibg=black guifg=white gui=bold
