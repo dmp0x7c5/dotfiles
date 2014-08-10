@@ -41,8 +41,7 @@ alias postgres_stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
 #alias ctags="`brew --prefix`/bin/ctags"
 
 # disable control-s suspend
-#stty stop undef
-#stty start unde
+setopt noflowcontrol
 
 alias hdmi_off="xrandr --output HDMI-0 --off"
 alias hdmi_on="xrandr --output HDMI-0 --mode 1920x1080 --pos 0x0 --output LVDS-0 --mode 1366x768 --pos 1920x312"
@@ -145,13 +144,6 @@ unsetopt autoparamslash
 #bindkey -s '\M-/' \\\\
 #bindkey -s '\M-=' \|
 
-bindkey -v			# vi key bindings
-bindkey ' ' magic-space		# also do history expansion on space
-bindkey '^I' complete-word	# complete on tab, leave expansion to _expand
-bindkey '^a' beginning-of-line	# cursor to ^
-#bindkey '^e' end-of-line	# cursor to $
-bindkey '^r' history-incremental-search-backward
-bindkey "^e" expand-cmd-path	# C-e for expanding path of typed command
 
 
 #] titlebar in terminal [#
@@ -320,4 +312,12 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+bindkey -v			# vi key bindings
+bindkey ' ' magic-space		# also do history expansion on space
+bindkey '^I' complete-word	# complete on tab, leave expansion to _expand
+bindkey '^a' beginning-of-line	# cursor to ^
+#bindkey '^e' end-of-line	# cursor to $
+bindkey '^r' history-incremental-search-backward
+bindkey '^e' expand-cmd-path	# C-e for expanding path of typed command
 
