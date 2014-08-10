@@ -2,7 +2,6 @@
 " dmp's vimrc
 " ========================================================================
 " 	dmp0x7c5@gmail.com
-"
 
 " ========================================================================
 " Vundle - Vim plugin manager - Required to be on the top of vimrc
@@ -362,14 +361,23 @@ au BufWritePre *.rb :%s/\s\+$//e
 
 
 " ========================================================================
-" Keys
+" Keys and leaders
 " ========================================================================
-map <C-s> :w<CR>
-imap <C-s> <esc>:w<CR>
-map <C-h> :tabprevious<CR>
-map <C-l> :tabnext<CR>
+
+" lifeshorter: control+s
+map <C-S> :w<CR>
+imap <C-S> <esc>:w<CR>i
+
+" tabmover
+map < :tabprevious<CR>
+map > :tabnext<CR>
 
 let mapleader = ","
+
+nnoremap <Leader>m :NERDTreeToggle<CR>
+
+let hlstate=0
+nnoremap <leader>n :if (hlstate%2 == 0) \| nohlsearch \| else \| set hlsearch \| endif \| let hlstate=hlstate+1<CR>
 
 
 " ========================================================================
