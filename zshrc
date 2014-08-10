@@ -42,6 +42,8 @@ alias postgres_stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
 
 # disable control-s suspend
 setopt noflowcontrol
+stty stop undef
+stty start undef
 
 alias hdmi_off="xrandr --output HDMI-0 --off"
 alias hdmi_on="xrandr --output HDMI-0 --mode 1920x1080 --pos 0x0 --output LVDS-0 --mode 1366x768 --pos 1920x312"
