@@ -39,6 +39,8 @@ Plugin 'bling/vim-airline'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'kana/vim-textobj-user'
 
+Plugin 'mattn/gist-vim'
+
 " tmp:
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'mileszs/ack.vim'
@@ -359,6 +361,8 @@ augroup END
 " Remove trailing whitespace on save for ruby files.
 au BufWritePre *.rb :%s/\s\+$//e
 
+" Coffee
+autocmd BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
 
 " ========================================================================
 " Keys and leaders
@@ -366,7 +370,7 @@ au BufWritePre *.rb :%s/\s\+$//e
 
 " lifeshorter: control+s
 map <C-S> :w<CR>
-imap <C-S> <esc>:w<CR>i
+imap <C-S> <esc>:w<CR>
 
 " tabmover
 map < :tabprevious<CR>
@@ -386,10 +390,47 @@ nnoremap <leader>n :if (hlstate%2 == 0) \| nohlsearch \| else \| set hlsearch \|
 command Gc Gcommit -v
 
 
+" ========================================================================
+" Copy file path Leaders
+" ========================================================================
+
+" copy current file name (relative/absolute) to system clipboard
+if has("mac") || has("gui_macvim") || has("gui_mac")
+  " relative path  (src/foo.txt)
+  nnoremap <leader>cf :let @*=expand("%")<CR>
+
+  " absolute path  (/something/src/foo.txt)
+  nnoremap <leader>cF :let @*=expand("%:p")<CR>
+
+  " filename       (foo.txt)
+  nnoremap <leader>ct :let @*=expand("%:t")<CR>
+
+  " directory name (/something/src)
+  nnoremap <leader>ch :let @*=expand("%:p:h")<CR>
+endif
+
+" copy current file name (relative/absolute) to system clipboard (Linux version)
+if has("gui_gtk") || has("gui_gtk2") || has("gui_gnome") || has("unix")
+  " relative path (src/foo.txt)
+  nnoremap <leader>cf :let @+=expand("%")<CR>
+
+  " absolute path (/something/src/foo.txt)
+  nnoremap <leader>cF :let @+=expand("%:p")<CR>
+
+  " filename (foo.txt)
+  nnoremap <leader>ct :let @+=expand("%:t")<CR>
+
+  " directory name (/something/src)
+  nnoremap <leader>ch :let @+=expand("%:p:h")<CR>
+endif
+
 
 " ========================================================================
 " Plugins Customs
 " ========================================================================
 " for vim-airline
 set laststatus=2
+
+" for gist-vim
+let g:gist_post_private = 1
 
