@@ -23,37 +23,36 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Selected plugins
+Plugin 'bling/vim-airline'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'kana/vim-textobj-user'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'mattn/gist-vim'
+Plugin 'nelstrom/vim-textobj-rubyblock'
+Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'tpope/vim-bundler'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-ruby/vim-ruby'
-Plugin 'kchmck/vim-coffee-script'
 Plugin 'wincent/Command-T'
-Plugin 'ntpeters/vim-better-whitespace'
-
-Plugin 'flazz/vim-colorschemes'
-Plugin 'bling/vim-airline'
-
-Plugin 'nelstrom/vim-textobj-rubyblock'
-Plugin 'kana/vim-textobj-user'
-
-Plugin 'mattn/gist-vim'
 
 " tmp:
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'mileszs/ack.vim'
+"Plugin 'mileszs/ack.vim'
+Plugin 'rking/ag.vim'
+Plugin 'sjl/gundo.vim.git'
 
 " Snipmate + deps
 " >>>
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "garbas/vim-snipmate"
-Bundle "honza/vim-snippets"
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+Plugin 'tomtom/tlib_vim'
 
 " NERDTree usage :NERDTreeToggle
-" >>>
+" >>> <leader>m
 Plugin 'scrooloose/nerdtree'
 
 " All of your Plugins must be added before the following line
@@ -373,12 +372,14 @@ map <C-S> :w<CR>
 imap <C-S> <esc>:w<CR>
 
 " tabmover
-map < :tabprevious<CR>
-map > :tabnext<CR>
+map <C-Z> :tabprevious<CR>
+map <C-X> :tabnext<CR>
 
 let mapleader = ","
 
-nnoremap <Leader>m :NERDTreeToggle<CR>
+nnoremap <Leader>m :NERDTreeToggle<cr>
+nnoremap <Leader>g :GundoToggle<cr>
+nnoremap <Leader>f :CommandT<cr>
 
 let hlstate=0
 nnoremap <leader>n :if (hlstate%2 == 0) \| nohlsearch \| else \| set hlsearch \| endif \| let hlstate=hlstate+1<CR>
