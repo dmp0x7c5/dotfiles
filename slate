@@ -53,4 +53,5 @@ bind esc:cmd hint
 bind j:cmd focus 'Google Chrome'
 bind k:cmd focus 'MacVim'
 bind l:cmd focus 'iTerm'
+bind h:cmd focus 'HipChat'
 

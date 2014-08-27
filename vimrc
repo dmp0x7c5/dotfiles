@@ -28,6 +28,7 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'kana/vim-textobj-user'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'mattn/gist-vim'
+Plugin 'mattn/webapi-vim' " required by gist-vim
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'tpope/vim-bundler'
