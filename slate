@@ -6,10 +6,10 @@ config nudgePercentOf screenSize
 config resizePercentOf screenSize
 
 # Resize Bindings
-bind right:alt       resize +10% +0
-bind left:alt        resize -10% +0
-bind up:alt          resize +0   -10%
-bind down:alt        resize +0   +10%
+#bind right:alt       resize +10% +0
+#bind left:alt        resize -10% +0
+#bind up:alt          resize +0   -10%
+#bind down:alt        resize +0   +10%
 bind right:ctrl;alt  resize -10% +0 bottom-right
 bind left:ctrl;alt   resize +10% +0 bottom-right
 bind up:ctrl;alt     resize +0   +10% bottom-right
@@ -53,5 +53,5 @@ bind esc:cmd hint
 bind j:cmd focus 'Google Chrome'
 bind k:cmd focus 'MacVim'
 bind l:cmd focus 'iTerm'
-bind h:cmd focus 'HipChat'
+bind h:cmd focus 'Slack'
 
