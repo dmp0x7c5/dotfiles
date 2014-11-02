@@ -40,7 +40,7 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'wincent/Command-T'
 
 " tmp:
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 "Plugin 'mileszs/ack.vim'
 Plugin 'rking/ag.vim'
 Plugin 'sjl/gundo.vim.git'
@@ -105,7 +105,7 @@ set listchars=tab:[-,trail:\
 "colorscheme night
 "colorscheme zenburn
 "colorscheme dusk
-colorscheme railscasts
+colorscheme molokai
 
 "if &t_Co > 2 || has("gui_running")
 "	colorscheme hemisu
@@ -353,6 +353,8 @@ augroup myfiletypes
   " Make ?s part of words
   autocmd FileType ruby,eruby,yaml setlocal iskeyword+=?
 
+  autocmd FileType coffee setlocal ai sw=2 sts=2 et
+
   " Clojure
   "autocmd FileType clojure setlocal colorcolumn=80
   "autocmd FileType clojure map <Leader>t :!lein test %<cr>
@@ -361,8 +363,6 @@ augroup END
 " Remove trailing whitespace on save for ruby files.
 au BufWritePre *.rb :%s/\s\+$//e
 
-" Coffee
-autocmd BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
 
 " ========================================================================
 " Keys and leaders
@@ -373,16 +373,19 @@ map <C-S> :w<CR>
 imap <C-S> <esc>:w<CR>
 
 " tabmover
-map <C-Z> :tabprevious<CR>
-map <C-X> :tabnext<CR>
+map <D-1> :tabprevious<CR>
+map <D-2> :tabnext<CR>
+imap <D-1> <esc>:tabprevious<CR>
+imap <D-2> <esc>:tabnext<CR>
 
 let mapleader = ","
 
 nnoremap <Leader>m :NERDTreeToggle<cr>
 nnoremap <Leader>g :GundoToggle<cr>
 nnoremap <Leader>f :CommandT<cr>
+nnoremap <Leader>t :tabnew<cr>
 
-let hlstate=0
+let hlstate = 0
 nnoremap <leader>n :if (hlstate%2 == 0) \| nohlsearch \| else \| set hlsearch \| endif \| let hlstate=hlstate+1<CR>
 
 
