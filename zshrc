@@ -94,7 +94,7 @@ PROMPT="%{$fg_bold[blue]%}:%{$fg_bold[green]%}:%{$fg_bold[blue]%}:%{$reset_color
 #] env [#
 export EDITOR=vim # default editor (:
 export HELPDIR=/usr/local/lib/zsh/help  # directory for run-help function to find docs
-export JAVA_HOME=/home/dmp/.gentoo/java-config-2/current-user-vm
+#export JAVA_HOME=/home/dmp/.gentoo/java-config-2/current-user-vm
 
 #] history [#
 HISTSIZE=50000
