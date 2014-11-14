@@ -381,7 +381,9 @@ imap <D-2> <esc>:tabnext<CR>
 let mapleader = ","
 
 nnoremap <Leader>m :NERDTreeToggle<cr>
-nnoremap <Leader>g :GundoToggle<cr>
+nnoremap <Leader>h :GundoToggle<cr>
+nnoremap <Leader>gs :Gstatus<cr>
+nnoremap <Leader>gc :Gcommit -v<cr>
 nnoremap <Leader>f :CommandT<cr>
 nnoremap <Leader>t :tabnew<cr>
 
