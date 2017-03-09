@@ -21,16 +21,21 @@
      ;;(colors :variables
      ;;  colors-enable-rainbow-identifiers t)
      colors
+     dash
      html
      javascript
      markdown
      osx
      ruby
-     snippets
+     ruby-on-rails
+     ;; snippets
      syntax-checking
      auto-completion
+     react
+     elixir
+     emoji
      ;;
-     personal-dmp
+     ;; personal-dmp
      )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
@@ -67,8 +72,6 @@ before layers configuration."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(monokai
-                         solarized-light
-                         solarized-dark
                          leuven
                          zenburn)
    ;; If non nil the cursor color matches the state color.
@@ -153,9 +156,17 @@ before layers configuration."
 
   ;; Ruby/EnhRuby settings
   (custom-set-variables '(ruby-indent-level 2))
+  (custom-set-variables '(ruby-deep-indent-paren nil))
+  (custom-set-variables '(ruby-add-encoding-comment-on-save nil))
+
   (custom-set-variables '(enh-ruby-indent-level 2))
   (custom-set-variables '(enh-ruby-deep-indent-paren nil))
   (custom-set-variables '(enh-ruby-add-encoding-comment-on-save nil))
+
+  ;; web-mode
+  (custom-set-variables '(web-mode-markup-indent-offset 2))
+  (custom-set-variables '(web-mode-css-indent-offset 2))
+  (custom-set-variables '(web-mode-code-indent-offset 2))
 
   ;; rspec-mode
   ;; (custom-set-variables '(rspec-use-bundler-when-possible nil))
@@ -201,8 +212,8 @@ before layers configuration."
   "Configuration function.
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
-  (global-company-mode)
-  (global-flycheck-mode)
+  ;; (global-company-mode)
+  ;; (global-flycheck-mode)
   ;; (add-hook 'enh-ruby-mode-hook (lambda () (rspec-mode)))
 
   ;; ;; toggles
@@ -213,3 +224,39 @@ layers configuration."
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(coffee-tab-width 2)
+ '(compilation-message-face (quote default))
+ '(enh-ruby-add-encoding-comment-on-save nil)
+ '(enh-ruby-deep-indent-paren nil)
+ '(enh-ruby-hanging-paren-deep-indent-level 2)
+ '(enh-ruby-indent-level 2)
+ '(evil-shift-width 2)
+ '(indent-tabs-mode nil)
+ '(js-indent-level 2)
+ '(js2-basic-offset 2)
+ '(magit-diff-use-overlays nil)
+ '(neo-auto-indent-point t)
+ '(pivotal-api-token "e6eb527098e9c420f1af00620bf2703f")
+ '(pivotal-current-task-id "98447352")
+ '(ring-bell-function (quote ignore) t)
+ '(ruby-add-encoding-comment-on-save nil)
+ '(ruby-deep-indent-paren nil)
+ '(ruby-indent-level 2)
+ '(ruby-insert-encoding-magic-comment nil)
+ '(tab-always-indent (quote complete))
+ '(vc-annotate-background nil)
+ '(web-mode-code-indent-offset 2)
+ '(web-mode-css-indent-offset 2)
+ '(web-mode-markup-indent-offset 2))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
+ '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
