@@ -241,8 +241,6 @@ layers configuration."
  '(js2-basic-offset 2)
  '(magit-diff-use-overlays nil)
  '(neo-auto-indent-point t)
- '(pivotal-api-token "e6eb527098e9c420f1af00620bf2703f")
- '(pivotal-current-task-id "98447352")
  '(ring-bell-function (quote ignore) t)
  '(ruby-add-encoding-comment-on-save nil)
  '(ruby-deep-indent-paren nil)
