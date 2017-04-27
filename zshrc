@@ -32,6 +32,7 @@ alias mkdir='nocorrect mkdir'
 
 alias chromium-tor='chromium-browser --proxy-server="socks5://localhost:9050"'
 alias netbeans-7.2-aa='netbeans-7.2 -J-Dswing.aatext=true -J-Dawt.useSystemAAFontSettings=lcd'
+alias spacemacs='open -a Emacs'
 
 # develiases
 alias g="git"
