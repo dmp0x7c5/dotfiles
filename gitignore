@@ -1,4 +1,5 @@
 *.swp
 TAGS
-tags
 empty
+.DS_Store
+!tags/
