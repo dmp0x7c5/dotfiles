@@ -23,7 +23,7 @@
      colors
      dash
      html
-     javascript
+     ;;javascript
      markdown
      osx
      ruby
@@ -34,6 +34,7 @@
      react
      elixir
      emoji
+     python
      ;;
      ;; personal-dmp
      )
@@ -186,8 +187,10 @@ before layers configuration."
   (global-set-key (kbd "C-s") 'save-buffer)
 
   ;; - command+shift+[ as a tabswitch
-  (global-set-key (kbd "s-{") 'spacemacs/previous-useful-buffer)
-  (global-set-key (kbd "s-}") 'spacemacs/next-useful-buffer)
+  (global-set-key (kbd "s-{") 'previous-buffer)
+  (global-set-key (kbd "s-}") 'next-buffer)
+  ;; (global-set-key (kbd "s-{") 'spacemacs/previous-useful-buffer)
+  ;; (global-set-key (kbd "s-}") 'spacemacs/next-useful-buffer)
   (global-set-key (kbd "s-1") 'previous-buffer)
   (global-set-key (kbd "s-2") 'next-buffer)
 
@@ -256,5 +259,6 @@ layers configuration."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(default ((((class color) (min-colors 257)) (:foreground "#F8F8F2" :background "#272822")) (((class color) (min-colors 89)) (:foreground "#F5F5F5" :background "#1B1E1C"))))
  '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
  '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
