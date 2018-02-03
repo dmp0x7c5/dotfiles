@@ -284,53 +284,30 @@ values."
    ;; Not used for now. (default nil)
    dotspacemacs-default-package-repository nil
    )
-  ;; User initialization goes here
+  )
 
-  ;; (advice-add #'magit-key-mode-popup-committing :after
-  ;;           (lambda ()
-  ;;             (magit-key-mode-toggle-option (quote committing) "--verbose")))
 
-  ;; Identation
-  (setq tab-width 4)
-  (custom-set-variables '(evil-shift-width 2))
-  (custom-set-variables '(coffee-tab-width 2))
+(defun dotspacemacs/user-init ()
+  "Initialization function for user code.
+It is called immediately after `dotspacemacs/init'.  You are free to put almost
+any user code here.  The exception is org related code, which should be placed
+in `dotspacemacs/user-config'."
+  )
 
-  ;; Ruby/EnhRuby settings
-  (custom-set-variables '(ruby-indent-level 2))
-  (custom-set-variables '(ruby-deep-indent-paren nil))
-  (custom-set-variables '(ruby-add-encoding-comment-on-save nil))
+(defun dotspacemacs/user-config ()
+  "Configuration function for user code.
+This function is called at the very end of Spacemacs initialization after
+layers configuration. You are free to put any user code."
 
-  (custom-set-variables '(enh-ruby-indent-level 2))
-  (custom-set-variables '(enh-ruby-deep-indent-paren nil))
-  (custom-set-variables '(enh-ruby-add-encoding-comment-on-save nil))
-
-  ;; web-mode
-  (custom-set-variables '(web-mode-markup-indent-offset 2))
-  (custom-set-variables '(web-mode-css-indent-offset 2))
-  (custom-set-variables '(web-mode-code-indent-offset 2))
-
-  ;; rspec-mode
-  ;; (custom-set-variables '(rspec-use-bundler-when-possible nil))
-  ;; (custom-set-variables '(rspec-use-rake-when-possible nil))
-  ;; (custom-set-variables '(rspec-use-rvm nil))
-
-  (setq-default ruby-enable-ruby-on-rails-support t)
-  (setq-default ruby-version-manager 'rvm)
+  ;; What's the difference between setq and setq-default?
+  ;; - If a variable is buffer-local, then setq sets its local value in the current buffer
+  ;;   and setq-default sets the global default value.
+  ;; - If a variable is not buffer-local, then setq and setq-default do the same thing.
 
   ;; ;; Polish characters
-  ;; (setq-default mac-option-key-is-meta nil)
-  ;; (setq-default mac-command-key-is-meta t)
-  ;; (setq-default mac-command-modifier 'meta)
-  ;; (setq-default mac-option-modifier nil)
+  (setq mac-option-modifier nil)
 
-  ;; (emacs-lisp
-  ;;  (osx :variables osx-use-option-as-meta nil))
-
-  ;; Overrides for control-h related:
-  ;; (global-set-key (kbd "C-?") 'help-command)
-  ;; (global-set-key (kbd "M-?") 'mark-paragraph)
-  ;; (global-set-key (kbd "C-h") 'delete-backward-char)
-  ;; (global-set-key (kbd "M-h") 'backward-kill-word)
+  (setq require-final-newline t)
 
   ;; - control-s to save and save your lifetime
   (global-set-key (kbd "C-s") 'save-buffer)
@@ -341,13 +318,8 @@ values."
   (global-set-key (kbd "s-1") 'previous-buffer)
   (global-set-key (kbd "s-2") 'next-buffer)
 
-  ;; Own spacemax key bindings
-  ;; (evil-leader/set-key "org" 'projectile-rails-goto-file-at-point)
-
   ;; Ctags:
   (setq projectile-tags-command "/usr/local/bin/ctags --exclude='*.html' --exclude='*.js' --exclude='*.coffee' -Re -f \"%s\" %s")
-
-  (setq require-final-newline t)
 
   (defun convert-hashrockets ()
     "Replace ruby hashrockets with new hash syntax"
@@ -356,14 +328,8 @@ values."
     (while (search-forward-regexp ":\\([-_A-Za-z0-9]+\\)[[:space:]]=>" nil t)
       (replace-match ( concat (match-string 1) ":") t nil )))
 
-  )
-
-
-(defun dotspacemacs/config ()
-  "Configuration function.
- This function is called at the very end of Spacemacs initialization after
-layers configuration."
 )
+
 
 dotspacemacs-configuration-layers '((markdown :variables markdown-live-preview-engine 'vmd))
 
