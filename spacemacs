@@ -12,6 +12,7 @@
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
    '(
+     yaml
      ;; --------------------------------------------------------
      ;; Example of useful layers you may want to use right away
      ;; Uncomment a layer name and press C-c C-c to install it
@@ -177,6 +178,15 @@ before layers configuration."
   (setq-default ruby-enable-ruby-on-rails-support t)
   (setq-default ruby-version-manager 'rvm)
 
+  ;; ;; Polish characters
+  ;; (setq-default mac-option-key-is-meta nil)
+  ;; (setq-default mac-command-key-is-meta t)
+  ;; (setq-default mac-command-modifier 'meta)
+  ;; (setq-default mac-option-modifier nil)
+
+  ;; (emacs-lisp
+  ;;  (osx :variables osx-use-option-as-meta nil))
+
   ;; Overrides for control-h related:
   ;; (global-set-key (kbd "C-?") 'help-command)
   ;; (global-set-key (kbd "M-?") 'mark-paragraph)
@@ -187,12 +197,8 @@ before layers configuration."
   (global-set-key (kbd "C-s") 'save-buffer)
 
   ;; - command+shift+[ as a tabswitch
-  (global-set-key (kbd "s-{") 'previous-buffer)
-  (global-set-key (kbd "s-}") 'next-buffer)
-  ;; (global-set-key (kbd "s-{") 'spacemacs/previous-useful-buffer)
-  ;; (global-set-key (kbd "s-}") 'spacemacs/next-useful-buffer)
-  (global-set-key (kbd "s-1") 'previous-buffer)
-  (global-set-key (kbd "s-2") 'next-buffer)
+  (global-set-key (kbd "s-{") 'next-buffer)
+  (global-set-key (kbd "s-}") 'previous-buffer)
 
   ;; Own spacemax key bindings
   ;; (evil-leader/set-key "org" 'projectile-rails-goto-file-at-point)
@@ -211,6 +217,7 @@ before layers configuration."
 
   )
 
+
 (defun dotspacemacs/config ()
   "Configuration function.
  This function is called at the very end of Spacemacs initialization after
@@ -223,7 +230,13 @@ layers configuration."
   ;; (spacemacs/toggle-fill-column-indicator)
   ;; (spacemacs/toggle-syntax-checking)
   ;; (spacemacs/toggle-indent-guide-globally)
+
+
+  ;; (setq-default mac-option-modifier nil)
+  ;; (set-keyboard-coding-system nil)
 )
+
+dotspacemacs-configuration-layers '((markdown :variables markdown-live-preview-engine 'vmd))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
@@ -243,8 +256,11 @@ layers configuration."
  '(js-indent-level 2)
  '(js2-basic-offset 2)
  '(magit-diff-use-overlays nil)
- '(neo-auto-indent-point t)
- '(ring-bell-function (quote ignore) t)
+ '(neo-auto-indent-point t t)
+ '(package-selected-packages
+   (quote
+    (evil js2-mode simple-httpd tern smartparens goto-chg elixir-mode company helm-core yasnippet markdown-mode magit-popup git-commit with-editor async hydra rake projectile haml-mode dash s iedit flycheck helm multiple-cursors magit inflections org-plus-contrib yaml-mode ws-butler winum which-key web-mode web-beautify volatile-highlights vi-tilde-fringe uuidgen use-package toc-org tagedit spaceline smeargle slim-mode scss-mode sass-mode rvm ruby-tools ruby-test-mode rubocop rspec-mode robe reveal-in-osx-finder restart-emacs rbenv rainbow-mode rainbow-identifiers rainbow-delimiters pug-mode projectile-rails popwin persp-mode pbcopy paradox osx-trash osx-dictionary orgit org-bullets open-junk-file ob-elixir neotree move-text monokai-theme mmm-mode minitest markdown-toc magit-gitflow magit-gh-pulls lorem-ipsum livid-mode linum-relative link-hint less-css-mode launchctl json-mode js2-refactor js-doc info+ indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-dash helm-css-scss helm-company helm-c-yasnippet helm-ag google-translate golden-ratio github-search github-clone github-browse-file gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gist gh-md fuzzy flycheck-pos-tip flycheck-mix flycheck-credo flx-ido fill-column-indicator feature-mode fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu emoji-cheat-sheet-plus emmet-mode dumb-jump dash-at-point company-web company-tern company-statistics company-emoji column-enforce-mode color-identifiers-mode coffee-mode clean-aindent-mode chruby bundler auto-yasnippet auto-highlight-symbol alchemist aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell)))
+ '(ring-bell-function (quote ignore))
  '(ruby-add-encoding-comment-on-save nil)
  '(ruby-deep-indent-paren nil)
  '(ruby-indent-level 2)
