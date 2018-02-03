@@ -323,3 +323,4 @@ bindkey '^a' beginning-of-line	# cursor to ^
 bindkey '^r' history-incremental-search-backward
 bindkey '^e' expand-cmd-path	# C-e for expanding path of typed command
 
+alias gpr='open "https://github.com/netguru/ikea-eb/compare/master...`git rev-parse --abbrev-ref HEAD`?expand=1"'
