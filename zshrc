@@ -31,15 +31,17 @@ alias cpr='nocorrect cp -avr'
 alias mkdir='nocorrect mkdir'
 
 alias chromium-tor='chromium-browser --proxy-server="socks5://localhost:9050"'
-alias netbeans-7.2-aa='netbeans-7.2 -J-Dswing.aatext=true -J-Dawt.useSystemAAFontSettings=lcd'
-alias spacemacs='open -a Emacs'
+alias netbeans-7.2-aa="netbeans-7.2 -J-Dswing.aatext=true -J-Dawt.useSystemAAFontSettings=lcd"
+alias spacemacs="/Applications/Emacs.app/Contents/MacOS/Emacs"
 
 # develiases
 alias g="git"
 alias postgres_start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 alias postgres_stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
-# for vim-rails purposes system ctags renamed
-#alias ctags="`brew --prefix`/bin/ctags"
+
+# gpr to open compare pre-PR view in a browser
+alias gpr='open "https://github.com/netguru/ikea-eb/compare/master...`git rev-parse --abbrev-ref HEAD`?expand=1"'
+
 
 # disable control-s suspend
 setopt noflowcontrol
@@ -323,5 +325,3 @@ bindkey '^a' beginning-of-line	# cursor to ^
 #bindkey '^e' end-of-line	# cursor to $
 bindkey '^r' history-incremental-search-backward
 bindkey '^e' expand-cmd-path	# C-e for expanding path of typed command
-
-alias gpr='open "https://github.com/netguru/ikea-eb/compare/master...`git rev-parse --abbrev-ref HEAD`?expand=1"'
