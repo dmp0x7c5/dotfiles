@@ -31,3 +31,7 @@ It just uses one config file: [.spacemacs](spacemacs)
 My personalized settings can be found in `dotspacemacs/user-config` definition and at the end of the file in `custom-set-variables` section.
 
 On Mac I'm using this Emacs package: https://emacsformacosx.com/
+
+## WMs
+
+I'm using https://github.com/jigish/slate (on Mac) just for fast-switching between apps using defined shortcuts: [.slate](slate)
