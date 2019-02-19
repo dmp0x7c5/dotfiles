@@ -1,8 +1,32 @@
-# dmp's slate file - only app switches
+# dmp's slate file
+alias top-half     move screenOriginX;screenOriginY                             screenSizeX;screenSizeY/2
+alias bottom-half  move screenOriginX;screenOriginY+screenSizeY/2               screenSizeX;screenSizeY/2
+alias left-half    move screenOriginX;screenOriginY                             screenSizeX/2;screenSizeY
+alias right-half   move screenOriginX+screenSizeX/2;screenOriginY               screenSizeX/2;screenSizeY
+alias top-left     move screenOriginX;screenOriginY                             screenSizeX/2;screenSizeY/2
+alias top-right    move screenOriginX+screenSizeX/2;screenOriginY               screenSizeX/2;screenSizeY/2
+alias bottom-left  move screenOriginX;screenOriginY+screenSizeY/2               screenSizeX/2;screenSizeY/2
+alias bottom-right move screenOriginX+screenSizeX/2;screenOriginY+screenSizeY/2 screenSizeX/2;screenSizeY/2
+alias maximized    move screenOriginX;screenOriginY                             screenSizeX;screenSizeY
 
-bind j:cmd focus 'Google Chrome'
-bind k:cmd focus 'Safari'
-bind l:cmd focus 'iTerm2'
-bind h:cmd focus 'Slack'
-bind m:cmd focus 'Spotify'
-bind e:cmd focus 'Emacs'
+# Positioning
+bind w:ctrl;alt;cmd ${top-half}
+bind x:ctrl;alt;cmd ${bottom-half}
+bind a:ctrl;alt;cmd ${left-half}
+bind d:ctrl;alt;cmd ${right-half}
+bind q:ctrl;alt;cmd ${top-left}
+bind e:ctrl;alt;cmd ${top-right}
+bind z:ctrl;alt;cmd ${bottom-left}
+bind c:ctrl;alt;cmd ${bottom-right}
+bind s:ctrl;alt;cmd ${maximized}
+
+# Fast-app-switches
+bind j:cmd,alt focus 'Google Chrome'
+bind k:cmd,alt focus 'Safari'
+bind l:cmd,alt focus 'iTerm2'
+bind h:cmd,alt focus 'Slack'
+bind s:cmd,alt focus 'Slack'
+bind m:cmd,alt focus 'Spotify'
+bind e:cmd,alt focus 'Emacs'
+bind c:cmd,alt focus 'ClickUp'
+bind t:cmd,alt focus 'Telegram'
