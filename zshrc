@@ -40,7 +40,7 @@ alias postgres_start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgr
 alias postgres_stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
 
 # gpr to open compare pre-PR view in a browser
-alias gpr='open "https://github.com/netguru/ikea-eb/compare/master...`git rev-parse --abbrev-ref HEAD`?expand=1"'
+alias gpr='open "https://github.com/netguru/compeon_reverse/compare/master...`git rev-parse --abbrev-ref HEAD`?expand=1"'
 
 
 # disable control-s suspend
@@ -71,6 +71,8 @@ alias amarok='amarok && sleep 5 && dcop kded kded loadModule kdetrayproxy'
 
 export WQ3='ryjek.chopin.edu.pl:44830'
 alias westernq3='startx /usr/games/bin/quake3 +set fs_game westernq3 +connect $WQ3 -- :4'
+
+alias pdflatex="/Library/TeX/Distributions/Programs/texbin/pdflatex"
 
 #[ obexftp via bt ]#
 alias phoneput="obexftp -b 00:12:EE:FB:9D:77 -p "
